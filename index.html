@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Guessing Game</title>
+  </head>
+  <body>
+    <div class="main">
+      <h1>Guessing Game!</h1>
+
+      <input
+        type="button"
+        value="Start a new game"
+        class="btn newGame"
+        aria-label="Start a new game"
+      />
+      <p class="guessNumber">Guess a number between 1-100</p>
+
+      <div class="inputNumber">
+        <input
+          type="text"
+          name="number"
+          id="number"
+          aria-label="input guess number"
+        />
+        <input
+          type="button"
+          value="Guess"
+          class="btn clickToGuess"
+          aria-label="Guess"
+        />
+      </div>
+
+      <div class="progress-bar">
+        <div class="progress"></div>
+      </div>
+      <div class="left">
+        <p>Your recorded Guesses:</p>
+        <p class="yourGuess">Not Started</p>
+      </div>
+      <div class="right">
+        <p class="highScore">HighScore: 0</p>
+        <p class="lifeLine">LifeLine: 50</p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

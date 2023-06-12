@@ -1,0 +1,64 @@
+body {
+  text-align: center;
+  background-color: #d9d9d9;
+}
+
+h1 {
+  padding: 2rem;
+}
+
+.btn {
+  background-color: #778699;
+  border: 0;
+  cursor: pointer;
+  /* padding: 0.5rem; */
+}
+
+.newGame {
+  padding: 0.7rem 0.5rem;
+  border-radius: 5px;
+}
+.inputNumber {
+  margin: 1rem auto;
+}
+#number,
+.clickToGuess {
+  height: 40px;
+  margin: 0;
+  display: inline-block;
+}
+
+.clickToGuess {
+  height: 45px;
+  /* border-end-end-radius: 10px; */
+  border-radius: 0 10px 10px 0;
+  /* padding: 0; */
+}
+
+.progress-bar {
+  width: 350px;
+  height: 20px;
+  background-color: #eee;
+  border: 1px #017f04 solid;
+  margin: auto;
+  border-radius: 5px;
+}
+
+.progress {
+  width: 0%;
+  height: 100%;
+  background-color: #017f04;
+  border-radius: 5px;
+}
+
+.left {
+  width: 50%;
+  float: left;
+  margin: auto;
+}
+
+.right {
+  width: 50%;
+  float: right;
+  margin: auto;
+}
