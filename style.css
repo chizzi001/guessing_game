@@ -1,3 +1,5 @@
+/* SECTION: Styling classes and elements  */
+
 body {
   text-align: center;
   background-color: #d9d9d9;
@@ -22,6 +24,8 @@ h1 {
   /* padding: 0.5rem; */
 }
 
+/* SECTION: Start new game btn styling */
+
 .newGame {
   padding: 0.7rem 0.5rem;
   border-radius: 5px;
@@ -30,6 +34,9 @@ h1 {
   z-index: 50;
   opacity: 1;
 }
+
+/* !SECTION */
+
 .inputNumber {
   margin: 1rem auto;
 }
@@ -127,3 +134,14 @@ h1 {
   left: 0px;
   background-color: #77869989;
 }
+
+/* !SECTION */
+
+/* BUG: Of hall beyond with noontide lands from a. Which sister it and harold he had night mammon come. Thou power. */
+/* [x] Of hall beyond with noontide lands from a. Which sister it and harold he had night mammon come. Thou power. */
+/* ALERT Of hall beyond with noontide lands from a. Which sister it and harold he had night mammon come. Thou power. */
+/* FIXME Of hall beyond with noontide lands from a. Which sister it and harold he had night mammon come. Thou power. */
+
+/* HACK Of hall beyond with noontide lands from a. Which sister it and harold he had night mammon come. Thou power. */
+/* TODO Of hall beyond with noontide lands from a. Which sister it and harold he had night mammon come. Thou power. */
+/* NOTE Of hall beyond with noontide lands from a. Which sister it and harold he had night mammon come. Thou power. */

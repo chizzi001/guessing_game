@@ -1,8 +1,7 @@
+// SECTION Assigning values to variables
+
 let newGame = document.querySelector(".newGame");
 let clickToGuess = document.querySelector(".clickToGuess");
-
-// document.querySelector("#number").value = range;
-
 let randNumber = Math.ceil(Math.random() * 100);
 console.log(randNumber);
 let highScore = 0;
@@ -11,9 +10,13 @@ let lifeLineNumber = 10;
 document.querySelector(".lifeLineNumber").textContent = lifeLineNumber;
 document.querySelector(".highScoreNumber").textContent = highScore;
 let number;
-// let range;
+let rangeNumber;
 
-setInterval(() => {
+// !SECTION
+
+// SECTION: setInterval for the range class. the input number updates as the range increases, vice versa
+
+rangeNumber = setInterval(() => {
   number = Number(
     (document.querySelector("#number").value = Number(
       document.querySelector("#range").value
@@ -24,10 +27,28 @@ setInterval(() => {
   document.querySelector(".progress").style.width = `${number}%`;
 });
 
+// !SECTION
+
+// SECTION: Set the input tag for the to cancel the setInterval as soon as we click on it
+
+document.querySelector("#number").addEventListener("click", function () {
+  // console.log("clicked");
+  clearInterval(rangeNumber);
+});
+
+// !SECTION
+
+// SECTION: The guess button checks if the inputted number === random number
+
 clickToGuess.addEventListener("click", function () {
   console.log(randNumber);
+  number = Number(document.querySelector("#number").value);
+
+  // SECTION: while the lifeline>0 the game keeps running
 
   if (lifeLineNumber > 1) {
+    // SECTION: What happens if the inputted number === random number
+
     if (number === randNumber) {
       document.querySelector(
         ".yourGuess"
@@ -44,14 +65,24 @@ clickToGuess.addEventListener("click", function () {
 
       randNumber = Math.ceil(Math.random() * 100);
       console.log(randNumber);
-    } else if (!number) {
+    }
+
+    // !SECTION
+
+    // SECTION: What happens if the inputted number !== a number or === 0
+    else if (!number) {
       document.querySelector(".emoji").textContent = "😠";
 
-      document.querySelector(".yourGuess").textContent = "🚫 No number!";
+      document.querySelector(".yourGuess").textContent = "🚫 Invalid number!";
       document.querySelector(".yourGuess").style.fontSize = "medium";
       document.querySelector(".yourGuess").style.fontWeight = "400";
       document.querySelector(".yourGuess").style.color = "black";
-    } else if (number !== randNumber) {
+    }
+
+    // !SECTION
+
+    // SECTION: What happens if the inputted number !== random number
+    else if (number !== randNumber) {
       document.querySelector(".emoji").textContent = "😔";
 
       --lifeLineNumber;
@@ -67,9 +98,19 @@ clickToGuess.addEventListener("click", function () {
       document.querySelector(".yourGuess").style.color = "black";
     }
 
+    // !SECTION
+
+    // NOTE: The progress bar updates with the inputted number
+
     progress = document.querySelector(".progress").style.width = `${number}%`;
     console.log(progress);
-  } else {
+
+    // !NOTE
+  }
+  // !SECTION
+
+  // SECTION: If the inputted number === 0
+  else {
     document.querySelector(".lifeLineNumber").textContent = ` 0`;
     document.querySelector("h1").textContent = "Game Over 🥹";
     document.querySelector("#number").value = "Game Over";
@@ -77,7 +118,13 @@ clickToGuess.addEventListener("click", function () {
     document.querySelector(".gameOver").style.display = "flex";
     document.querySelector(".main").style.opacity = ".2";
   }
+
+  // !SECTION
 });
+
+// !SECTION
+
+// SECTION: When the start new game is clicked
 
 newGame.addEventListener("click", function () {
   document.querySelector("#number").removeAttribute("disabled", "");
@@ -91,3 +138,5 @@ newGame.addEventListener("click", function () {
   lifeLineNumber = 10;
   highScoreHolder = 0;
 });
+
+// !SECTION
