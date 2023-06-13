@@ -3,11 +3,43 @@
 let newGame = document.querySelector(".newGame");
 let clickToGuess = document.querySelector(".clickToGuess");
 let randNumber = Math.ceil(Math.random() * 100);
+let hard = document.querySelector(".hard");
+let medium = document.querySelector(".medium");
+let easy = document.querySelector(".easy");
+let lifeLineFont = document.querySelector(".lifeLineNumber").textContent;
 console.log(randNumber);
 let highScore = 0;
 let highScoreHolder = 0;
-let lifeLineNumber = 10;
-document.querySelector(".lifeLineNumber").textContent = lifeLineNumber;
+let lifeLineNumber = " Select Level 👇🏽";
+
+document.querySelector(".lifeLineNumber").style.fontSize = "medium";
+let level = () => {
+  document.querySelector(".lifeLineNumber").textContent = lifeLineNumber;
+};
+hard.addEventListener("click", function () {
+  lifeLineNumber = Number(10);
+  level();
+  document.querySelector(".lifeLineNumber").style.fontSize = "xx-large";
+
+  // console.log(typeof lifeLineNumber);
+  // console.log(typeof level);
+});
+medium.addEventListener("click", function () {
+  lifeLineNumber = 25;
+  level();
+  document.querySelector(".lifeLineNumber").style.fontSize = "xx-large";
+});
+easy.addEventListener("click", function () {
+  lifeLineNumber = 50;
+  level();
+  document.querySelector(".lifeLineNumber").style.fontSize = "xx-large";
+});
+
+document.querySelector(".changeLevel").addEventListener("click", function () {
+  document.querySelector(".changeLevel").style.display = "none";
+});
+
+level();
 document.querySelector(".highScoreNumber").textContent = highScore;
 let number;
 let rangeNumber;
@@ -32,7 +64,7 @@ rangeNumber = setInterval(() => {
 // SECTION: Set the input tag for the to cancel the setInterval as soon as we click on it
 
 document.querySelector("#number").addEventListener("click", function () {
-  // console.log("clicked");
+  //
   clearInterval(rangeNumber);
 });
 
@@ -109,10 +141,11 @@ clickToGuess.addEventListener("click", function () {
   }
   // !SECTION
 
-  // SECTION: If the inputted number === 0
+  // SECTION: If the lifeLine number === 0
   else {
     document.querySelector(".lifeLineNumber").textContent = ` 0`;
-    document.querySelector("h1").textContent = "Game Over 🥹";
+    document.querySelector(".header").textContent = "Game Over";
+    document.querySelector(".emoji").textContent = "🥹!";
     document.querySelector("#number").value = "Game Over";
     document.querySelector("#number").setAttribute("disabled", "");
     document.querySelector(".gameOver").style.display = "flex";
@@ -127,15 +160,19 @@ clickToGuess.addEventListener("click", function () {
 // SECTION: When the start new game is clicked
 
 newGame.addEventListener("click", function () {
-  document.querySelector("#number").removeAttribute("disabled", "");
+  document.querySelector(".lifeLineNumber").textContent = " Select Level 👇🏽";
+  document.querySelector(".lifeLineNumber").style.fontSize = "medium";
+  document.querySelector(".header").textContent = "Guessing Game";
+  document.querySelector(".emoji").textContent = "🤔!";
   document.querySelector("#number").value = "";
-  document.querySelector(".yourGuess").textContent = "Not Started";
-  progress = document.querySelector(".progress").style.width = "0px";
+  document.querySelector("#number").removeAttribute("disabled", "");
   document.querySelector(".gameOver").style.display = "none";
-  document.querySelector(".lifeLineNumber").textContent = " 10";
   document.querySelector(".main").style.opacity = "1";
+  document.querySelector(".yourGuess").textContent = "⛔Not Started";
+  progress = document.querySelector(".progress").style.width = "0px";
+  document.querySelector(".changeLevel").style.display = "block";
 
-  lifeLineNumber = 10;
+  lifeLineNumber = "Please Select Level";
   highScoreHolder = 0;
 });
 

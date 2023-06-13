@@ -14,7 +14,10 @@
       aria-label="Start a new game"
     />
     <div class="main">
-      <h1>Guessing Game <span class="emoji">🤔</span>!</h1>
+      <h1>
+        <span class="header"> Guessing Game</span>
+        <span class="emoji">🤔!</span>
+      </h1>
 
       <p class="guessNumber">Guess a number between 1️⃣-💯</p>
 
@@ -53,6 +56,26 @@
           📊HighScore: <span class="highScoreNumber"></span>
         </p>
         <p class="lifeLine">🔃LifeLine:<span class="lifeLineNumber"></span></p>
+        <div class="changeLevel">
+          <input
+            type="button"
+            class="btn easy"
+            value="easy"
+            aria-label="easy"
+          />
+          <input
+            type="button"
+            class="btn medium"
+            value="medium"
+            aria-label="medium"
+          />
+          <input
+            type="button"
+            class="btn hard"
+            value="hard"
+            aria-label="hard"
+          />
+        </div>
       </div>
     </div>
     <div class="gameOver">
