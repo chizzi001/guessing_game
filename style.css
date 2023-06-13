@@ -1,6 +1,14 @@
 body {
   text-align: center;
   background-color: #d9d9d9;
+  max-width: 1000px;
+  margin: auto;
+  text-transform: capitalize;
+  /* position: relative; */
+}
+
+.main {
+  opacity: 1;
 }
 
 h1 {
@@ -17,6 +25,10 @@ h1 {
 .newGame {
   padding: 0.7rem 0.5rem;
   border-radius: 5px;
+  position: relative;
+  top: 20px;
+  z-index: 50;
+  opacity: 1;
 }
 .inputNumber {
   margin: 1rem auto;
@@ -35,6 +47,23 @@ h1 {
   /* padding: 0; */
 }
 
+.rangeNumber {
+  width: 350px;
+  height: 20px;
+  margin: auto;
+}
+
+#range {
+  width: 350px;
+  height: 20px;
+  background-color: #eee;
+  border: 1px #017f04 solid;
+  margin: auto;
+  border-radius: 5px;
+  clear: both;
+  border: 2px solid green;
+}
+
 .progress-bar {
   width: 350px;
   height: 20px;
@@ -42,6 +71,7 @@ h1 {
   border: 1px #017f04 solid;
   margin: auto;
   border-radius: 5px;
+  clear: both;
 }
 
 .progress {
@@ -51,14 +81,49 @@ h1 {
   border-radius: 5px;
 }
 
+.left,
+.right {
+  width: 45%;
+  /* border: solid; */
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem auto;
+}
+
 .left {
-  width: 50%;
   float: left;
-  margin: auto;
+}
+
+.yourGuess {
+  font-size: medium;
 }
 
 .right {
-  width: 50%;
   float: right;
-  margin: auto;
+}
+
+.highScore,
+.lifeLine {
+  font-size: 1rem;
+}
+
+.highScore .highScoreNumber,
+.lifeLine .lifeLineNumber {
+  font-weight: bolder;
+  font-size: xx-large;
+}
+
+.gameOver {
+  position: absolute;
+  display: none;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  top: 0px;
+  left: 0px;
+  background-color: #77869989;
 }

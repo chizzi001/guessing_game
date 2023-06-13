@@ -7,16 +7,16 @@
     <title>Guessing Game</title>
   </head>
   <body>
+    <input
+      type="button"
+      value="Start a new game"
+      class="btn newGame"
+      aria-label="Start a new game"
+    />
     <div class="main">
-      <h1>Guessing Game!</h1>
+      <h1>Guessing Game <span class="emoji">🤔</span>!</h1>
 
-      <input
-        type="button"
-        value="Start a new game"
-        class="btn newGame"
-        aria-label="Start a new game"
-      />
-      <p class="guessNumber">Guess a number between 1-100</p>
+      <p class="guessNumber">Guess a number between 1️⃣-💯</p>
 
       <div class="inputNumber">
         <input
@@ -32,18 +32,35 @@
           aria-label="Guess"
         />
       </div>
-
-      <div class="progress-bar">
-        <div class="progress"></div>
+      <div class="rangeNumber">
+        <input
+          type="range"
+          name="range"
+          id="range"
+          aria-label="range"
+          min="0"
+          max="100"
+          value="1"
+        />
       </div>
+
       <div class="left">
         <p>Your recorded Guesses:</p>
-        <p class="yourGuess">Not Started</p>
+        <p class="yourGuess">⛔Not Started</p>
       </div>
       <div class="right">
-        <p class="highScore">HighScore: 0</p>
-        <p class="lifeLine">LifeLine: 50</p>
+        <p class="highScore">
+          📊HighScore: <span class="highScoreNumber"></span>
+        </p>
+        <p class="lifeLine">🔃LifeLine:<span class="lifeLineNumber"></span></p>
       </div>
+    </div>
+    <div class="gameOver">
+      <h1>GAME OVER</h1>
+    </div>
+
+    <div class="progress-bar">
+      <div class="progress"></div>
     </div>
 
     <script src="script.js"></script>
