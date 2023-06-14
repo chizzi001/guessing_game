@@ -21,7 +21,7 @@ This is a guessing game that asks the user to guess a number between 1 and 100. 
 
 ## License
 
-![Licence](https://img.shields.io/github/license/chizzi001/guessing_game?style=for-the-badge)
+![Licence](https://img.shields.io/github/license/chizzi001/guessing_game?style=flat-square)
 
 ---
 
