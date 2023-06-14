@@ -1,5 +1,9 @@
 // SECTION Assigning values to variables
 
+// TODO Try to make the range slider, progressbar and the input sync. When I input a number, it should affect the range slider and progress bar, and when I drag the progressbar it should affect the input and progressbar
+
+// TODO Set max highscore  === 100. so when the user highscore reaches 100, the game stats resets just like start new game button. Show a nice animation. Or better still, when the user gets to 100, make only the start new game button clickaable and just show a really nice animation on the screen, maybe fireworks
+
 let newGame = document.querySelector(".newGame");
 let clickToGuess = document.querySelector(".clickToGuess");
 let randNumber = Math.ceil(Math.random() * 100);
